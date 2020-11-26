@@ -10,9 +10,13 @@
 $(document).ready(
   function() {
     var randomNumbers = [];
-
-    for (var i = 0; i < 5; i++) {
-    randomNumbers.push(randomNumber(100, 1));
+    // controllo numeri casuali diversi
+    while (randomNumbers.length < 5) {
+      var casualNumber = randomNumber(100, 1);
+      var duplicates = checkForDuplicates(casualNumber, randomNumbers);
+      if (duplicates == false) {
+        randomNumbers.push(casualNumber);
+      }
     }
     console.log('numeri casuali computer', randomNumbers);
     // alert con tutti i numeri casuali precedentemente creati
