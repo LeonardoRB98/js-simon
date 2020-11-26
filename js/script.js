@@ -22,25 +22,25 @@ $(document).ready(
     var matchedNumber = [];
     var userNumbers = [];
 
+
+
     setTimeout(function() {
+
       for(var i = 0; i < 5; i++) {
         var userNumber = parseInt(prompt('inserisci i numeri che ricordi'));
         var checker = checkForDuplicates(userNumber, randomNumbers);
+
         if (checker == true) {
-          userNumbers.push(userNumber);
           matchedNumber.push(userNumber);
+          userNumbers.push(userNumber);
         } else {
           userNumbers.push(userNumber);
         }
       }
+      console.log('numeri ricordati', matchedNumber);
+      console.log('numeri utente', userNumbers);
+      alert('hai ricordato: ' + matchedNumber.length + ' numero/i ' + '\nnumeri ricordati: ' + matchedNumber.join());
     }, 1000);
-    alert('hai ricordato', matchedNumber.length, )
-
-    console.log('numeri ricordati', matchedNumber);
-    console.log('numeri utente', userNumbers);
-
-
-
 
   }
 );
@@ -61,6 +61,7 @@ function checkForDuplicates(numero, array) {
     } else {
       duplicates = false;
     }
-    return duplicates;
   }
+
+  return duplicates;
 }
